@@ -38,8 +38,8 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "NERDtree
-let g:NERDTreeDirArrowExpandable = '>'
-let g:NERDTreeDirArrowCollapsible = 'v'
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
 map <C-n> :NERDTreeToggle<CR>
 "python
 au BufNewFile,BufRead *.py:
