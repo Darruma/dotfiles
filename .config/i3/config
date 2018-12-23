@@ -1,7 +1,13 @@
+
 #Super key as mod key
 set $mod Mod4
+exec feh --bg-fill '/home/darruma/Downloads/wallpaper.png'
 
 hide_edge_borders none
+# transparency
+
+#lockscreen
+bindsym $mod+Ctrl+l exec i3lock-fancy
 
 # change borders
 bindsym $mod+u border none
@@ -162,11 +168,10 @@ mode "resize" {
 gaps inner 14
 gaps outer -2
 
-
-
-
-
-
+bar
+{
+    status_command i3status
+}
 
 
 

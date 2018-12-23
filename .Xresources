@@ -1,19 +1,16 @@
 Xcursor.theme: ArchCursorTheme
-! also set with lxappearance and double check the following:
-! /usr/share/icons/default/index.theme
-! ~/.icons/default/index.theme
-! ~/.config/gtk-3.0/settings.ini
-! ~/.gtkrc-2.0
 URxvt.font :xft:inconsolata:pixelsize=20
 !URxvt.font: xft:Fantasque Sans Mono:size=15
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt*scrollBar: false
-!clickable urls
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-
+URxvt.transparent:  true
+URxvt.shading:  60
 URxvt.color24:  #076678
 URxvt.color66:  #427b58
 URxvt.color88:  #9d0006
