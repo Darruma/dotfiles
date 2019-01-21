@@ -1,12 +1,26 @@
-echo "Installing dotfiles"
-echo "Proceed (y/n)"
-read ans
-if [ $ans = 'y' ] 
-then
+
+function dotfiles()
+{
+    echo "Installing dotfiles"
+    echo "Proceed (y/n)"
+    read ans
+    if [ $ans = 'y' ] 
+    then
         for dotfile in $(find -type f | grep -vf  .gitignore | grep -v .gitignore); do
                 ln -sfv "$PWD/$dotfile" "$HOME/$dotfile"
         done
         echo "Symlink complete"
-else
+    else
         echo "Symlink cancelled"        
-fi
+    fi
+}
+
+function progs()
+{
+ pacman -Syu ttf-inconsolata powerline powerline-fonts ranger w3m feh git
+
+}
+
+
+dotfiles
+progs 
