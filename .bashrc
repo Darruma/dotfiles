@@ -1,5 +1,5 @@
 alias rg='ranger'
-alias pg='cd ~/Programming/'
+alias sv='sudo vim'
 # ~/.bashrc
 #
 
@@ -17,3 +17,4 @@ bg()
 {
  feh --randomize --bg-fill ~/Wallpapers/*
 }
+export PATH=$HOME/cmus/bin:$PATH
