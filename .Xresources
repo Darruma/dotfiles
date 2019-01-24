@@ -4,12 +4,10 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt*scrollBar: false
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/c800
-URxvt.perl-ext-common: default,matcher
+urxvt*background: rgba:0000/0000/1111/dddd
+URxvt.perl-ext-common: default,matcher,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.transparent:  true
-URxvt.shading:  60
 URxvt.color24:  #076678
 URxvt.color66:  #427b58
 URxvt.color88:  #9d0006

@@ -1,10 +1,8 @@
 
 #Super key as mod key
 set $mod Mod4
-exec feh --no-startup-id --bg-fill '/home/darruma/Downloads/wallpaper.png'
-
+exec compton
 hide_edge_borders none
-# transparency
 
 #lockscreen
 bindsym $mod+Shift+Ctrl+l exec i3lock-fancy
@@ -14,6 +12,7 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
+#font
 font xft:URWGothic-Book 11
 
 # Use Mouse+$mod to drag floating windows
@@ -21,6 +20,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+#browser
+bindsym $mod+grave exec chromium
 
 # kill focused window
 bindsym $mod+q kill
@@ -112,6 +114,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -169,8 +172,8 @@ mode "resize" {
 }
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+gaps inner 25
+gaps outer -10
 
 bar
 {

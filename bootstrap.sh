@@ -17,8 +17,9 @@ function dotfiles()
 
 function progs()
 {
- pacman -Syu ttf-inconsolata powerline powerline-fonts ranger w3m feh git
-
+ pacman -Syu ttf-inconsolata  powerline powerline-fonts ranger w3m feh git
+ git clone https://aur.archlinux.org/yay.git
+ makepkg -si
 }
 
 
