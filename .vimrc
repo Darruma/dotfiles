@@ -6,13 +6,9 @@ set expandtab
 let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
-
-Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
-"vim arline theme
-let g:airline_theme='wombat'
 
 "Python settings
 au BufNewFile,BufRead *.py

@@ -148,6 +148,20 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+
+
+
+
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -175,9 +189,9 @@ mode "resize" {
 gaps inner 25
 gaps outer -10
 
-bar
-{
-    status_command i3status
+bar {
+	status_command bumblebee-status -m cpu memory battery amixer cmus date time -p time.format="%H:%M"  -t gruvbox-powerline
 }
+
 
 
