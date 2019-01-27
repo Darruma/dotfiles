@@ -1,24 +1,16 @@
 Xcursor.theme: ArchCursorTheme
-! also set with lxappearance and double check the following:
-! /usr/share/icons/default/index.theme
-! ~/.icons/default/index.theme
-! ~/.config/gtk-3.0/settings.ini
-! ~/.gtkrc-2.0
-
 URxvt.font: xft:inconsolata:size=17
 URxvt*scrollBar:false
+
+!transparency
+URxvt.depth:32
+URxvt.background: rgba:1111/1111/1111/dddd
+
 !clickable urls
 URxvt.perl-ext-common: default,matcher,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
-! -----------------------------------------------------------------------------
-! File: gruvbox-urxvt256.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 13 Dec 2013
-! -----------------------------------------------------------------------------
 
 URxvt.color24:  #076678
 URxvt.color66:  #427b58
@@ -51,16 +43,8 @@ URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 6 Sep 2014
-! -----------------------------------------------------------------------------
-
-! hard contrast: *background: #1d2021
-*background: #282828
+  *background: #1d2021
+! *background: #282828
 ! soft contrast: *background: #32302f
 *foreground: #ebdbb2
 ! Black + DarkGrey

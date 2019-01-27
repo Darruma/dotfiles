@@ -17,4 +17,5 @@ bg()
 {
  feh --randomize --bg-fill ~/Wallpapers/*
 }
-export PATH=$HOME/cmus/bin:$PATH
+export PATH=$HOME/cmus/bin:$HOME/.cargo/bin:$PATH
+

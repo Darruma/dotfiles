@@ -1,2 +1,2 @@
 #!/bin/sh
- feh --bg-max --randomize --no-fehbg ~/.wallpaper/*
+feh --bg-fill '/home/darruma/Wallpapers/1546894532451.jpg' 

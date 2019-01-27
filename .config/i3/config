@@ -1,4 +1,3 @@
-
 #Super key as mod key
 set $mod Mod4
 exec compton
@@ -13,7 +12,7 @@ bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
 #font
-font xft:URWGothic-Book 11
+font xft:URWGothic-Book 14 
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -29,10 +28,10 @@ bindsym $mod+q kill
 
 for_window [class="[peek]"] floating enable
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xft:inconsolata:size=14'
 
 #open alsamixer
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod++m exec terminal 
 
 # change focus
 bindsym $mod+h focus left
@@ -85,12 +84,8 @@ bindsym $mod+e layout toggle split
 
 bindsym $mod+space floating toggle
 
-
 # focus the parent container
 bindsym $mod+a focus parent
-
-# move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
@@ -158,10 +153,6 @@ set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
 
-
-
-
-
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -188,9 +179,10 @@ mode "resize" {
 # Set inner/outer gaps
 gaps inner 25
 gaps outer -10
-
+font pango:DejaVu Sans Mono 14 
 bar {
-	status_command bumblebee-status -m cpu memory battery amixer cmus date time -p time.format="%H:%M"  -t gruvbox-powerline
+    position top
+	status_command bumblebee-status -m cpu disk  memory battery amixer cmus weather date time -p time.format="%H:%M"  -t gruvbox-powerline
 }
 
 
