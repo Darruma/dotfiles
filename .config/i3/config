@@ -1,16 +1,18 @@
 #Super key as mod key
 set $mod Mod4
 exec compton
+exec flameshot
 hide_edge_borders none
 
 #lockscreen
-bindsym $mod+Shift+Ctrl+l exec i3lock-fancy
+bindsym $mod+Shift+Ctrl+l exec i3lockr
 
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
+bindsym $mod+f exec flameshot gui
 #font
 font xft:URWGothic-Book 14 
 
@@ -75,7 +77,7 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+Shift+q split toggle
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -108,7 +110,6 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
-
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -179,10 +180,10 @@ mode "resize" {
 # Set inner/outer gaps
 gaps inner 25
 gaps outer -10
-font pango:DejaVu Sans Mono 14 
+font pango:DejaVu Sans Mono 12 
 bar {
     position top
-	status_command bumblebee-status -m cpu disk  memory battery amixer cmus weather date time -p time.format="%H:%M"  -t gruvbox-powerline
+	status_command bumblebee-status -m cpu disk  memory battery amixer weather date time -p disk.left-click="urxvt -e ranger"  cpu.left-click="urxvt -e top" amixer.left-click="urxvt -e alsamixer"  time.format="%H:%M"  -t gruvbox-powerline
 }
 
 

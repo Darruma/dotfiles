@@ -1,5 +1,6 @@
 alias rg='ranger'
 alias sv='sudo vim'
+alias sp='sudo pacman'
 # ~/.bashrc
 #
 
@@ -7,6 +8,7 @@ alias sv='sudo vim'
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+eval "`dircolors ~/.mydircolors`"
 PS1='[\u@\h \W]\$ '
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1

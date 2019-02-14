@@ -7,17 +7,9 @@ let mapleader = " "
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/goyo.vim'
-
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 "Python settings
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix 
-
 syntax on
