@@ -1,6 +1,7 @@
 alias rg='ranger'
 alias sv='sudo vim'
 alias sp='sudo pacman'
+alias todo='cat ~/todo'
 # ~/.bashrc
 #
 
@@ -19,5 +20,10 @@ bg()
 {
  feh --randomize --bg-fill ~/Wallpapers/*
 }
-export PATH=$HOME/cmus/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.scripts:$HOME/.cargo/bin:$PATH
 
+
+export http_proxy=''
+export https_proxy=''
+export ftp_proxy=''
+export socks_proxy=''

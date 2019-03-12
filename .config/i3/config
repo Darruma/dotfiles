@@ -4,6 +4,8 @@ exec compton
 exec flameshot
 hide_edge_borders none
 
+set $monitor eDP1 #laptop
+set $monitor HDMI-0
 #lockscreen
 bindsym $mod+Shift+Ctrl+l exec i3lockr
 
@@ -178,12 +180,12 @@ mode "resize" {
 }
 
 # Set inner/outer gaps
-gaps inner 25
-gaps outer -10
+gaps inner 30
+gaps outer 10
 font pango:DejaVu Sans Mono 12 
 bar {
     position top
-	status_command bumblebee-status -m cpu disk  memory battery amixer weather date time -p disk.left-click="urxvt -e ranger"  cpu.left-click="urxvt -e top" amixer.left-click="urxvt -e alsamixer"  time.format="%H:%M"  -t gruvbox-powerline
+	status_command bumblebee-status -m disk traffic memory battery amixer weather time -p disk.left-click="urxvt -e ranger"  amixer.left-click="urxvt -e alsamixer"  time.format="%H:%M"  -t gruvbox-powerline
 }
 
 
