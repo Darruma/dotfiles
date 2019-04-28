@@ -9,16 +9,22 @@ alias todo='cat ~/todo'
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-eval "`dircolors ~/.mydircolors`"
 PS1='[\u@\h \W]\$ '
+
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/share/powerline/bindings/bash/powerline.sh
 
+
 bg()
 {
  feh --randomize --bg-fill ~/Wallpapers/*
+}
+
+downloadmp3()
+{
+    youtube-dl --extract-audio --audio-format mp3 $1 --add-metadata
 }
 export PATH=$HOME/.scripts:$HOME/.cargo/bin:$PATH
 
@@ -29,3 +35,4 @@ export ftp_proxy=''
 export socks_proxy=''
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval $(dircolors -b $HOME/.dircolors)

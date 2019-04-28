@@ -2,12 +2,13 @@
 set $mod Mod4
 exec compton
 exec flameshot
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 hide_edge_borders none
+default_border none
 
-set $monitor eDP1 #laptop
-set $monitor HDMI-0
+for_window [class="^.*"] border pixel 0
 #lockscreen
-bindsym $mod+Shift+Ctrl+l exec i3lockr
+bindsym $mod+Shift+Ctrl+l exec i3lock-fancy
 
 # change borders
 bindsym $mod+u border none
@@ -16,26 +17,25 @@ bindsym $mod+n border normal
 
 bindsym $mod+f exec flameshot gui
 #font
-font xft:URWGothic-Book 14 
+font xft:URWGothic-Book 12 
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 #browser
 bindsym $mod+grave exec chromium
 
 # kill focused window
 bindsym $mod+q kill
-
-for_window [class="[peek]"] floating enable
 # start program launcher
 bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xft:inconsolata:size=14'
 
+
 #open alsamixer
-bindsym $mod++m exec terminal 
+bindsym $mod+m exec terminal 
 
 # change focus
 bindsym $mod+h focus left
@@ -183,10 +183,12 @@ mode "resize" {
 gaps inner 30
 gaps outer 10
 font pango:DejaVu Sans Mono 12 
-bar {
-    position top
-	status_command bumblebee-status -m disk traffic memory battery amixer weather time -p disk.left-click="urxvt -e ranger"  amixer.left-click="urxvt -e alsamixer"  time.format="%H:%M"  -t gruvbox-powerline
-}
+
+#bar {
+ #   position top
+#	status_command bumblebee-status -m disk  memory battery cmus amixer  time -p disk.left-click="urxvt -e ranger"  amixer.left-click="urxvt -e alsamixer"  time.format="%H:%M"  -t gruvbox-powerline
+#}
+
 
 
 
