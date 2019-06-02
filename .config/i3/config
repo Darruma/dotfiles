@@ -2,18 +2,15 @@
 set $mod Mod4
 exec compton
 exec flameshot
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-hide_edge_borders none
-default_border none
-
-for_window [class="^.*"] border pixel 0
-#lockscreen
+exec_always --no-startup-id "sh $HOME/.config/polybar/launch.sh"
+exec_always "setxkbmap gb -option caps:swapescape"
 bindsym $mod+Shift+Ctrl+l exec i3lock-fancy
 
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
+default_border pixel 0
 
 bindsym $mod+f exec flameshot gui
 #font
@@ -23,19 +20,18 @@ font xft:URWGothic-Book 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
-
+bindsym $mod+Return exec st
 #browser
-bindsym $mod+grave exec chromium
+bindsym $mod+grave exec chromium-browser
 
 # kill focused window
 bindsym $mod+q kill
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xft:inconsolata:size=14'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xft:inconsolata:size=12'
 
 
 #open alsamixer
-bindsym $mod+m exec terminal 
+bindsym $mod+m exec "st alsamixer" 
 
 # change focus
 bindsym $mod+h focus left
@@ -183,12 +179,5 @@ mode "resize" {
 gaps inner 30
 gaps outer 10
 font pango:DejaVu Sans Mono 12 
-
-#bar {
- #   position top
-#	status_command bumblebee-status -m disk  memory battery cmus amixer  time -p disk.left-click="urxvt -e ranger"  amixer.left-click="urxvt -e alsamixer"  time.format="%H:%M"  -t gruvbox-powerline
-#}
-
-
 
 
