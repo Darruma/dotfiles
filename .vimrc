@@ -19,5 +19,6 @@ map <C-l> gt
 map <C-h> gT 
 set bg=dark
 let g:airline#extensions#tabline#enabled = 1
+let &t_ut=''
 colorscheme gruvbox
 syntax on

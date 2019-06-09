@@ -1,9 +1,10 @@
-Xcursor.theme: ArchCursorTheme
-URxvt.font: xft:Inconsolata\ Nerd\ Font:style=Medium:size=14
+Xursor.theme: ArchCursorTheme
+*.font:	FiraCode-Regular:pixelsize=25:antialias=true:autohint=true;
+*.alpha:0.9
 URxvt*scrollBar:false
 Rxvt.perl-ext-common: default,matcher,resize-font
 URxvt.url-launcher: /usr/bin/xdg-open
-
+*.dpi:150
  hard contrast: *background: #1d2021
 *background: #282828
 ! soft contrast: *background: #32302f

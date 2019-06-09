@@ -22,7 +22,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec st
 #browser
-bindsym $mod+grave exec chromium-browser
+bindsym $mod+grave exec chromium
 
 # kill focused window
 bindsym $mod+q kill
