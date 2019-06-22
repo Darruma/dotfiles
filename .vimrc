@@ -3,13 +3,18 @@ set encoding=utf-8
 set relativenumber
 set tabstop=4
 set shiftwidth=4
+filetype plugin indent off
 set expandtab
 let mapleader = " "
 call plug#begin('~/.vim/plugged')
+Plug 'mattn/emmet-vim'
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'morhetz/gruvbox'
+Plug 'Valloric/MatchTagAlways'
 Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

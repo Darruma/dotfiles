@@ -15,13 +15,4 @@ function dotfiles()
     fi
 }
 
-function progs()
-{
- pacman -Syu ttf-inconsolata  powerline powerline-fonts ranger w3m feh git
- git clone https://aur.archlinux.org/yay.git
- makepkg -si
-}
-
-
 dotfiles
-progs 

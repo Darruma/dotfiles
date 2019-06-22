@@ -1,0 +1,4 @@
+set status_display_program=/home/umair/programs/cmus_notify_program.sh
+wq
+add .
+q

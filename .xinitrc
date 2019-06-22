@@ -2,6 +2,8 @@
 xrdb merge ~/.Xresources
 setxkbmap -layout gb -option caps:escape
 setxkbmap -option compose:rctrl
+dunst & 
+./.fehbg & 
 xrandr --dpi 140
 compton &
-dbus-launch i3
+exec i3

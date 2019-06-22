@@ -1,9 +1,10 @@
 #Super key as mod key
 set $mod Mod4
-exec compton
 exec flameshot
 exec_always --no-startup-id "sh $HOME/.config/polybar/launch.sh"
-exec_always "setxkbmap gb -option caps:swapescape"
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "killall compton && compton"
+
 bindsym $mod+Shift+Ctrl+l exec i3lock-fancy
 
 # change borders
@@ -12,7 +13,7 @@ bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 default_border pixel 0
 
-bindsym $mod+f exec flameshot gui
+bindsym $mod+f exec --no-startup-id flameshot gui
 #font
 font xft:URWGothic-Book 12 
 
@@ -20,7 +21,7 @@ font xft:URWGothic-Book 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec --no-startup-id "kitty"
 #browser
 bindsym $mod+grave exec chromium
 
@@ -31,7 +32,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xft:inconsolata:size=12'
 
 
 #open alsamixer
-bindsym $mod+m exec "st alsamixer" 
+bindsym $mod+m exec --no-startup-id "kitty alsamixer" 
 
 # change focus
 bindsym $mod+h focus left
@@ -70,8 +71,8 @@ bindsym $mod+Ctrl+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+z split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+z split h;exec notify-send 'i3' 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'i3' 'tile vertically'
 bindsym $mod+Shift+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -178,6 +179,11 @@ mode "resize" {
 # Set inner/outer gaps
 gaps inner 30
 gaps outer 10
-font pango:DejaVu Sans Mono 12 
+bar {
+    font pango:FontAwesome 10
+    position top
+    status_command bumblebee-status -m sensors cpu disk memory cmus battery time amixer -t gruvbox -p disk.left-click="kitty" cpu.left-click="kitty htop" amixer.left-click="kitty alsamixer"
+}
+
 
 

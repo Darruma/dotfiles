@@ -1,5 +1,5 @@
 Xursor.theme: ArchCursorTheme
-*.font:	FiraCode-Regular:pixelsize=25:antialias=true:autohint=true;
+*.font:Fira Code:pixelsize=25:antialias=true:autohint=true;
 *.alpha:0.9
 URxvt*scrollBar:false
 Rxvt.perl-ext-common: default,matcher,resize-font
@@ -32,5 +32,3 @@ URxvt.url-launcher: /usr/bin/xdg-open
 *color14: #8ec07c
 ! LightGrey + White
 *color7:  #a89984
-*color15: #ebdbb2
-
