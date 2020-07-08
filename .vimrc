@@ -14,7 +14,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-rooter'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/emmet-vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'plasticboy/vim-markdown'
 Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'pangloss/vim-javascript'    " JavaScript support
@@ -24,13 +26,24 @@ call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 map H :bprevious<CR>
 map L :bnext<CR>
+nnoremap <silent> K :call CocAction('doHover')<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+colorscheme gruvbox
+let g:ale_linters = {'python': ['flake8', 'mypy' ]}
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-tsserver',
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-python',
+  \ 'coc-css'
+  \ ]
 packloadall
 silent! helptags ALL
-
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 "Coc
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -57,7 +70,6 @@ if has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -156,8 +168,6 @@ command! -nargs=0 Format :call CocAction('format')
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
@@ -181,4 +191,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
